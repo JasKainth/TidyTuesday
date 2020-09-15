@@ -8,3 +8,7 @@ TidyTuesday is a weekly social data project that focusses on understanding how t
 
 ## Friends   
 For this data, I looked at the ratings and viewers for the show. Also, later I examined the correlation among the emotions of utterance (line) in scenes and also the correlation among which *friends* were in scenes together.  
+The following is a plot which compares the episode rating to the average rating of the season.  
+
+
+![](https://github.com/JasKainth/Images/blob/master/friends_avg_ratings.jpg)
