@@ -15,3 +15,10 @@ The following is a plot that compares the episode rating to the average rating o
 
 
 ![Friends Plot](https://github.com/JasKainth/TidyTuesday/blob/master/Friends/friends_avg_ratings.jpg)
+
+
+## European Energy (2020/ Week 32)  
+The data this week comes from Eurostat (https://ec.europa.eu/eurostat/statistics-explained/index.php/Electricity_generation_statistics_%E2%80%93_first_results)  
+Credit for code: Jas Kainth  
+For this weeks data, I explored the energy supplied and produced by the countries in the EU. Also, we try to see which countries are trying to be more green and also which types of energy is becoming more/less popular from a period of 2016 to 2018. 
+The following is a map of energy produced by the countries in Europe over the 3 years, seperated by Renewable and Non-Renewable energy.
