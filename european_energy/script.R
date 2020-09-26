@@ -1,13 +1,13 @@
----
-title: "European Energy"
-author: "Jas Kainth"
-date: "15/09/2020"
-output: pdf_document
-editor_options: 
-  chunk_output_type: console
----
-
-```{r setup, include=FALSE}
+#' ---
+#' title: "European Energy"
+#' author: "Jas Kainth"
+#' date: "15/09/2020"
+#' output: pdf_document
+#' editor_options: 
+#'   chunk_output_type: console
+#' ---
+#' 
+## ----setup, include=FALSE-----------------------------------------------------------
 knitr::opts_chunk$set(echo = TRUE)
 library(tidyverse)
 library(ggdark)
@@ -41,9 +41,9 @@ totals <- tuesdata$country_totals %>%
   mutate(country = ifelse(country == "EL", "GR", country))
 
 
-```
 
-```{r}
+#' 
+## -----------------------------------------------------------------------------------
 # Which Countries produce the most energy (from 2016 to 2018)
 test <- types %>% 
   select(country) %>% 
@@ -62,7 +62,6 @@ types %>%
   geom_col(aes(x = total, y = country_name, fill = Renewable)) +
   dark_theme_minimal() +
   theme(
-    text = element_text('Avenir Next Condensed'),
     strip.text = element_text(face = 'bold', hjust = 0),
     plot.subtitle = element_text(face = 'italic'),
     axis.ticks = element_blank(),
@@ -84,9 +83,9 @@ types %>%
 
 
 
-```
 
-```{r}
+#' 
+## -----------------------------------------------------------------------------------
 # Let's look at the top 9 and bottom 9 countries
 countries <- types %>% 
   group_by(country_name) %>% 
@@ -107,7 +106,6 @@ types %>%
   scale_y_continuous(labels = scales::comma) + 
   dark_theme_minimal() +
   theme(
-    text = element_text('Avenir Next Condensed'),
     strip.text = element_text(face = 'bold', hjust = 0),
     plot.subtitle = element_text(face = 'italic'),
     axis.ticks = element_blank(),
@@ -142,7 +140,6 @@ types %>%
   scale_y_continuous(labels = scales::comma) + 
   dark_theme_minimal() +
   theme(
-    text = element_text('Avenir Next Condensed'),
     strip.text = element_text(face = 'bold', hjust = 0),
     plot.subtitle = element_text(face = 'italic'),
     axis.ticks = element_blank(),
@@ -156,10 +153,10 @@ types %>%
   labs(title = "Countries with the Least Energy Production in Europe",
        y = "Total Energy (GWh)",
        x = "Energy Type")
-```
 
-
-```{r}
+#' 
+#' 
+## -----------------------------------------------------------------------------------
 # Are there countries which are attempting to use less energy?
 # Note: Energy Supplied = net + import - export - energy absorbed by pumping
 totals %>%
@@ -169,7 +166,6 @@ totals %>%
   geom_col(aes(x = value, y = country_name, fill = Year), position = 'dodge') +
   dark_theme_minimal() + 
   theme(
-    text = element_text('Avenir Next Condensed'),
     strip.text = element_text(face = 'bold', hjust = 0),
     panel.grid.major = element_line('black', size = 0.5),
     panel.grid.minor = element_blank(),
@@ -184,9 +180,9 @@ totals %>%
                      breaks = c(0, 200000, 400000, 600000)) + 
   scale_fill_lancet() + 
   guides(fill = guide_legend(reverse = TRUE))
-```
 
-```{r}
+#' 
+## -----------------------------------------------------------------------------------
 # Which countries had the largest difference for energy supplied in the 
 # 3 year period?
 countries <- totals %>% 
@@ -224,9 +220,9 @@ totals %>%
        y = "Energy (GWh) - Log Scale") +
   dark_theme_classic() +
   scale_y_log10(labels = scales::comma) 
-```
 
-```{r}
+#' 
+## -----------------------------------------------------------------------------------
 # Is there one energy type which is becoming more popular over the three years?
 types %>% 
   group_by(type, Year) %>% 
@@ -251,11 +247,11 @@ types %>%
 # (If we take the log scale away then it will be more noticeable but we won't see 
 # a change in any other energy type)
 
-```
 
-
-
-```{r}
+#' 
+#' 
+#' 
+## -----------------------------------------------------------------------------------
 # Let's make a map!!
 names <- types %>% 
   distinct(country_name) %>% 
@@ -284,12 +280,12 @@ data %>%
   theme_void() +
   facet_grid(Renewable ~ Year, switch = "y") + 
   scale_fill_material(palette = "cyan", labels = scales::comma) + 
-  theme(text = element_text('Avenir Next Condensed'),
+  theme(
     strip.text = element_text(face = 'bold', hjust = 0), 
     strip.text.y = element_text(hjust = 0.5)
     ) + 
   labs(title = "Energy Production in the EU", 
        fill = "Energy Production (GWh)") 
-```
 
-
+#' 
+#' 

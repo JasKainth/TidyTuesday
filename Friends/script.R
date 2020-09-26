@@ -1,13 +1,13 @@
----
-title: "Friends"
-author: "Jas Kainth"
-date: "07/09/2020"
-output: pdf_document
-editor_options: 
-  chunk_output_type: console
----
-
-```{r setup, include=FALSE}
+#' ---
+#' title: "Friends"
+#' author: "Jas Kainth"
+#' date: "07/09/2020"
+#' output: pdf_document
+#' editor_options: 
+#'   chunk_output_type: console
+#' ---
+#' 
+## ----setup, include=FALSE-----------------------------------------------------------
 knitr::opts_chunk$set(echo = FALSE)
 library(tidyverse)
 library(lubridate)
@@ -18,17 +18,17 @@ library(widyr)
 library(friends)
 library(tidylo)
 library(tidytext)
-```
 
-```{r}
+#' 
+## -----------------------------------------------------------------------------------
 tuesdata <- tidytuesdayR::tt_load('2020-09-08')
 friends <- tuesdata$friends
 info <- tuesdata$friends_info
 emotions <- tuesdata$friends_emotions
 entity <- friends_entities
-```
 
-```{r}
+#' 
+## -----------------------------------------------------------------------------------
 info %>% 
   ggplot() +
   geom_line(aes(x = air_date, y = imdb_rating, color = factor(season)), 
@@ -41,15 +41,14 @@ info %>%
        title = "Rating for Each Episode of 'Friends'",
        subtitle = "Different color represents different season") + 
   theme(legend.position = 'none',
-        text = element_text('Avenir Next Condensed'),
         strip.text = element_text(face = 'bold', hjust = 0),
         plot.caption = element_text(face = 'italic')) + 
   scale_y_continuous(limits = c(7, 10), breaks = c(7, 8, 9, 10))
-```
 
-## What are the 10 best episodes? 
-
-```{r}
+#' 
+#' ## What are the 10 best episodes? 
+#' 
+## -----------------------------------------------------------------------------------
 info %>% 
   arrange(-imdb_rating) %>% 
   head(10) %>% 
@@ -67,9 +66,9 @@ info %>%
        y = "") +
   scale_color_uchicago(palette = "dark") + 
   theme(legend.position = "none")
-```
-# Comparing the episode rating to their season average
-```{r}
+
+#' # Comparing the episode rating to their season average
+## -----------------------------------------------------------------------------------
 info <- info %>% 
   group_by(season) %>% 
   summarise(season_avg = mean(imdb_rating)) %>% 
@@ -101,10 +100,10 @@ info %>%
        y = "IMDb Rating",
        x = " ") + 
   scale_color_futurama()
-```
 
-## What about viewers?
-```{r}
+#' 
+#' ## What about viewers?
+## -----------------------------------------------------------------------------------
 info %>% 
   ggplot() + 
   geom_line(aes(x = air_date, y = us_views_millions, color = factor(season)), 
@@ -117,13 +116,12 @@ info %>%
        title = "Viewers for Each Episode of 'Friends'",
        subtitle = "Different color represents different season") + 
   theme(legend.position = 'none',
-        text = element_text('Avenir Next Condensed'),
         strip.text = element_text(face = 'bold', hjust = 0),
         plot.caption = element_text(face = 'italic')) + 
   scale_y_continuous(limits = c(15, 55), breaks = c(15, 25, 35, 45, 55))
-```
 
-```{r}
+#' 
+## -----------------------------------------------------------------------------------
 info %>% 
   arrange(-us_views_millions) %>% 
   head(10) %>% 
@@ -141,10 +139,10 @@ info %>%
   scale_x_continuous(limits = c(25, 55), breaks = c(25, 35, 45, 55)) +
   scale_color_uchicago(palette = "dark") + 
   theme(legend.position = "none")
-```
 
-## How about writters and directors? 
-```{r}
+#' 
+#' ## How about writters and directors? 
+## -----------------------------------------------------------------------------------
 `%not_in%` <- purrr::negate(`%in%`)
 info %>% 
   separate(directed_by, into = c("d1", "d2"), sep = "&") %>% 
@@ -152,9 +150,9 @@ info %>%
   separate(written_by, into = c("w1", "w2", "w3", "w4"), sep = "&")
 
 # Needs some cleaning
-```
 
-```{r}
+#' 
+## -----------------------------------------------------------------------------------
 # What are the most common moods in the first 4 seasons
 emotions %>% 
   group_by(season, emotion) %>% 
@@ -169,14 +167,13 @@ emotions %>%
        y = "", 
        fill = "Emotion") +
   scale_y_continuous(labels = scales::percent) +
-  theme(text = element_text('Avenir Next Condensed'),
-        strip.text = element_text(face = 'bold', hjust = 0),
+  theme(strip.text = element_text(face = 'bold', hjust = 0),
         plot.caption = element_text(face = 'italic'))
-```
 
-# Which emotions are often together in the same scene? 
-
-```{r}
+#' 
+#' # Which emotions are often together in the same scene? 
+#' 
+## -----------------------------------------------------------------------------------
 emotions %>% 
   mutate(name = glue("{ season }.{ episode }.{ scene }")) %>% 
   pairwise_cor(emotion, name, sort = TRUE) %>% 
@@ -192,7 +189,6 @@ emotions %>%
   dark_theme_classic() +
   scale_color_simpsons() + 
   theme(legend.position = 'none',
-        text = element_text('Avenir Next Condensed'),
         strip.text = element_text(face = 'bold', hjust = 0),
         plot.caption = element_text(face = 'italic')) +
   labs(title = "Correlation Among Emotions in the Same Scene", 
@@ -201,10 +197,10 @@ emotions %>%
   scale_x_continuous(limits = c(-0.2, 0.3), 
                      breaks = c(-0.2, -0.1, 0, 0.1, 0.2, 0.3)) 
   
-```
 
-## Which character speaks the most? 
-```{r}
+#' 
+#' ## Which character speaks the most? 
+## -----------------------------------------------------------------------------------
 six <- c("Rachel Green", "Ross Geller", "Chandler Bing", "Joey Tribbiani",
          "Phoebe Buffay", "Monica Geller")
 friends %>% 
@@ -217,7 +213,6 @@ friends %>%
   theme_minimal() + 
   scale_fill_futurama() + 
   theme(legend.position = 'none',
-        text = element_text('Avenir Next Condensed'),
         strip.text = element_text(face = 'bold', hjust = 0),
         plot.caption = element_text(face = 'italic'),
         panel.grid.major = element_line('white', size = 0.5),
@@ -229,9 +224,9 @@ friends %>%
        y = "") + 
   scale_x_continuous(limits = c(0, 10000), 
                      breaks = c(0, 2500, 5000, 7500, 10000))
-```
 
-```{r}
+#' 
+## -----------------------------------------------------------------------------------
 a <- info %>% 
   mutate(name = glue("{ season }.{ episode }")) %>% 
   select(name, air_date)
@@ -240,10 +235,10 @@ b <- friends %>%
   separate(speaker, into = c("First", "Last_Name"), sep = " ") %>% 
   mutate(name = glue("{ season }.{ episode }")) 
 c <- left_join(a, b, by = "name")
-```
 
-
-```{r}
+#' 
+#' 
+## -----------------------------------------------------------------------------------
 c %>% 
   group_by(First, air_date) %>% 
   summarise(total = n(),
@@ -263,7 +258,6 @@ c %>%
   dark_theme_minimal() + 
   scale_x_date(breaks = c()) + 
   theme(legend.position = "none",
-    text = element_text('Avenir Next Condensed'),
     strip.text = element_text(hjust = 0),
     plot.caption = element_text(face = 'italic'),
     panel.grid.major = element_blank(),
@@ -272,11 +266,11 @@ c %>%
   ) + 
   scale_y_continuous(limits = c(0, 125), breaks = c(0, 25, 50, 75, 100, 125))
   
-```
 
-
-## Which characters are most likely to be on screen together? 
-```{r}
+#' 
+#' 
+#' ## Which characters are most likely to be on screen together? 
+## -----------------------------------------------------------------------------------
 c %>% 
   mutate(fullscene = glue("{ name }.{ scene }")) %>% 
   pairwise_cor(First, fullscene, sort = TRUE) %>% 
@@ -286,7 +280,6 @@ c %>%
   dark_theme_minimal() + 
   scale_fill_uchicago() + 
   theme(legend.position = 'none',
-        text = element_text('Avenir Next Condensed'),
         strip.text = element_text(hjust = 0),
         plot.caption = element_text(face = 'italic'),
         panel.grid.major = element_line('black', size = 0.5),
@@ -298,9 +291,9 @@ c %>%
   labs(title = "Which Characters are Most Likely to be in a Scene Together?",
        x = "Correlation", 
        y = "")
-```
 
-```{r}
+#' 
+## -----------------------------------------------------------------------------------
 ## Are there words that some friends (i.e the main 6) are more likely to say
 ## than others? 
 
@@ -339,7 +332,6 @@ words %>%
        y = " ") + 
   dark_theme_minimal() + 
   theme(legend.position = 'none',
-        text = element_text('Avenir Next Condensed'),
         strip.text = element_text(hjust = 0),
         plot.caption = element_text(face = 'italic'),
         panel.grid.major = element_line('black', size = 0.5),
@@ -347,7 +339,7 @@ words %>%
         panel.grid.major.y = element_blank(), 
         panel.ontop = TRUE) + 
   scale_fill_uchicago()
-```
 
-
-
+#' 
+#' 
+#' 
