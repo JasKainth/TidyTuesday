@@ -28,7 +28,7 @@ For this data, we explore the energy supplied and produced by the countries in t
 
 The following map shows energy produced by the countries in Europe over 3 years, seperated by Renewable and Non-Renewable energy.
 
-![European Energy Map](https://github.com/JasKainth/TidyTuesday/blob/master/European%20Energy/european_energy_map.jpg)
+![European Energy Map](https://github.com/JasKainth/TidyTuesday/blob/master/european_energy/european_energy_map.jpg)
 
 ## Friends Dataset
 
@@ -38,5 +38,5 @@ For this data, we look at the ratings and viewers for the show. Also, later we e
 
 The following plot compares the episode rating to the average rating of the season.  
 
-![Friends Plot](https://github.com/JasKainth/TidyTuesday/blob/master/Friends/friends_avg_ratings.jpg)
+![Friends Plot](https://github.com/JasKainth/TidyTuesday/blob/master/friends/friends_avg_ratings.jpg)
 
