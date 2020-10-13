@@ -40,3 +40,16 @@ The following plot compares the episode rating to the average rating of the seas
 
 ![Friends Plot](https://github.com/JasKainth/TidyTuesday/blob/master/friends/friends_avg_ratings.jpg)
 
+## Wine Ratings Dataset  
+
+This data comes from Kaggle (https://www.kaggle.com/zynicide/wine-reviews).  
+
+For this data, we explore wine ratings and attempt to discover what factors might play role in the wine's rating. We use a text regression to determine the effect of each word in the description of the wine. 
+
+The plot below shows the effect of each word to the overall rating of the word for six different wines.  
+
+![Wine Ratings Word Plot](https://github.com/JasKainth/TidyTuesday/blob/master/wine_ratings/wine_rating_term_effect.jpg)
+
+The plot below is a netword plot showing which words often appear together in the same wine description. 
+
+![Wine Ratings Network Plot](https://github.com/JasKainth/TidyTuesday/blob/master/wine_ratings/wine_ratings_network_plot.jpg)
