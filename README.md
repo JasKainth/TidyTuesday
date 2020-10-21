@@ -53,3 +53,17 @@ The plot below shows the effect of each word to the overall rating of the word f
 The plot below is a netword plot showing which words often appear together in the same wine description. 
 
 ![Wine Ratings Network Plot](https://github.com/JasKainth/TidyTuesday/blob/master/wine_ratings/wine_ratings_network_plot.jpg)
+
+## Datasaurus Dataset
+
+This weeks dataset comes from Albert Cairo (http://www.thefunctionalart.com/2016/08/download-datasaurus-never-trust-summary.html).
+
+This dataset signifies the importance of plotting data rather than relying on common statistics. For this data, we plot the datasets and visually see the differences in the datasets. Also, we create a heatmap to see where the points are concentrated to impact the statistics.  
+
+Below is a plot of all the datasets.  
+
+![Full dataset Plot](https://github.com/JasKainth/TidyTuesday/blob/master/datasauraus/all_plots.jpg)
+
+Below is a gif of the datasets, showing the summary statistics for each dataset. Notice how similar the values are as we go from one dataset to the other.   
+
+![Datasaurus gif](https://github.com/JasKainth/TidyTuesday/blob/master/datasauraus/datasaurus.gif)
