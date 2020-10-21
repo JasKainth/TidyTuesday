@@ -102,20 +102,7 @@ datasaurus %>%
 
 # For most of them we see heavy concentration around some areas to change the mean &
 # medians
-  
 
-#' 
-## -------------------------------------------------------------------------------------
-datasaurus %>% 
-  left_join(., local_mean, by = "dataset") %>%
-  mutate(dataset = str_replace(dataset, "_", " "),
-         dataset = str_to_title(dataset)) %>% 
-  ggplot(aes(x = x, y = y)) + 
-  geom_point(aes(color = dataset), alpha = 0.5, shape = 16) + 
-  facet_wrap(~ dataset) +
-  theme_void() + 
-  scale_color_manual(values = pal_simpsons("springfield")(13)) + 
-  theme(legend.position = "none")
 
 #' 
 #' 
