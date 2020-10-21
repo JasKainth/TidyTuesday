@@ -56,7 +56,7 @@ The plot below is a netword plot showing which words often appear together in th
 
 ## Datasaurus Dataset
 
-This weeks dataset comes from Albert Cairo (http://www.thefunctionalart.com/2016/08/download-datasaurus-never-trust-summary.html).
+This data comes from Albert Cairo (http://www.thefunctionalart.com/2016/08/download-datasaurus-never-trust-summary.html).
 
 This dataset signifies the importance of plotting data rather than relying on common statistics. For this data, we plot the datasets and visually see the differences in the datasets. Also, we create a heatmap to see where the points are concentrated to impact the statistics.  
 
