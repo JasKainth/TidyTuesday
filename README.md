@@ -22,17 +22,31 @@ R < european_energy/script.R --no-save
 # Datasets
 
 ## European Energy Dataset  
-The data comes from Eurostat (https://ec.europa.eu/eurostat/statistics-explained/index.php/Electricity_generation_statistics_%E2%80%93_first_results)  
+The data comes from Eurostat (https://ec.europa.eu/eurostat/statistics-explained/index.php/Electricity_generation_statistics_%E2%80%93_first_results).
 
 For this data, we explore the energy supplied and produced by the countries in the European Union. Also, we attempt to examine which countries are trying to be more green and also which types of energy is becoming more/less popular from a period of 2016 to 2018.  
 
 The following map shows energy produced by the countries in Europe over 3 years, seperated by Renewable and Non-Renewable energy.
 
-![European Energy Map](https://github.com/JasKainth/TidyTuesday/blob/master/european_energy/european_energy_map.jpg)
+![European Energy Map](https://github.com/JasKainth/TidyTuesday/blob/master/european_energy/european_energy_map.jpg)  
+
+## Canadian Wind Turbine Dataset  
+The data comes from the Government of Canada (https://open.canada.ca/data/en/dataset/79fdad93-9025-49ad-ba16-c26d718cc070).  
+For this data, we explore the wind turbines which are commissioned in Canada. We see which provinces are attempting to create more energy using wind energy.  
+
+The following plot shows a relationship between the energy capacity of all the wind turbines in the project with respect to when the first wind turbine of that project was commissioned, and showing how many turbines are in that project.
+
+![Wind Turbine Plot](https://github.com/JasKainth/TidyTuesday/blob/master/canadian_wind_turbine/wind_turbine.jpg) 
+
+Later, we also attempt to predict the capacity of each turbine, using a decision tree. The following is a visualization of the decision tree.  
+Note: For this visualization, we can only use two predictors so, we picked the two more important predictors.  
+
+![Decision Tree Plot](https://github.com/JasKainth/TidyTuesday/blob/master/canadian_wind_turbine/decision_tree.jpg)  
+
 
 ## Friends Dataset
 
-This data comes from the ```friends``` R package https://github.com/EmilHvitfeldt/friends.
+This data comes from the ```friends``` R package (https://github.com/EmilHvitfeldt/friends).
 
 For this data, we look at the ratings and viewers for the show. Also, later we examine the correlation among the emotions of utterance (line of dialogue) in scenes and also the correlation among which *friends* are in scenes together.
 
