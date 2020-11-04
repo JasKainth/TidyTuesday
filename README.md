@@ -4,7 +4,7 @@
 
 TidyTuesday is a weekly social data project that focusses on understanding how to summarize and arrange data to make meaningful plots using  ````dplyr```` , ````tidyr```` , ````ggplot2```` & other tools in the ````tidyverse```` universe.
 
-For each dataset, we include a file with the code (.Rmd & .R file), which can be run using [RStudio](https://rstudio.com/products/rstudio/download/) or command line. See [How to Run](#how-to-run).
+For each dataset, we include a file with the code (.R file), which can be run using [RStudio](https://rstudio.com/products/rstudio/download/) or command line. See [How to Run](#how-to-run).
 
 # How to Run  
 
