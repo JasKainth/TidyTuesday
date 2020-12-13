@@ -19,10 +19,17 @@ After installing R, you can run a script in terminal, like so:
 R < european_energy/script.R --no-save
 ```
 
-# Datasets
+# Datasets  
+
+## Women of 2020  
+This data comes from [BBC](https://www.bbc.com/news/world-55042935).  
+
+For this data, BBC has revealed its list of 100 inspiring and influential women from around the world for 2020. We take a look at which categories do women from different categories excel in. 
+
+![Women Plot](https://github.com/JasKainth/TidyTuesday/blob/master/women_of_2020/women_plot.jpg)
 
 ## European Energy Dataset  
-The data comes from Eurostat (https://ec.europa.eu/eurostat/statistics-explained/index.php/Electricity_generation_statistics_%E2%80%93_first_results).
+The data comes from [Eurostat](https://ec.europa.eu/eurostat/statistics-explained/index.php/Electricity_generation_statistics_%E2%80%93_first_results).
 
 For this data, we explore the energy supplied and produced by the countries in the European Union. Also, we attempt to examine which countries are trying to be more green and also which types of energy is becoming more/less popular from a period of 2016 to 2018.  
 
@@ -31,7 +38,7 @@ The following map shows energy produced by the countries in Europe over 3 years,
 ![European Energy Map](https://github.com/JasKainth/TidyTuesday/blob/master/european_energy/european_energy_map.jpg)  
 
 ## Canadian Wind Turbine Dataset  
-The data comes from the Government of Canada (https://open.canada.ca/data/en/dataset/79fdad93-9025-49ad-ba16-c26d718cc070).  
+The data comes from the [Government of Canada](https://open.canada.ca/data/en/dataset/79fdad93-9025-49ad-ba16-c26d718cc070).  
 For this data, we explore the wind turbines which are commissioned in Canada. We see which provinces are attempting to create more energy using wind energy.  
 
 The following plot shows a relationship between the energy capacity of all the wind turbines in the project with respect to when the first wind turbine of that project was commissioned, and showing how many turbines are in that project.
@@ -46,7 +53,7 @@ Note: For this visualization, we can only use two predictors so, we picked the t
 
 ## Friends Dataset
 
-This data comes from the ```friends``` R package (https://github.com/EmilHvitfeldt/friends).
+This data comes from the ```friends``` [R package](https://github.com/EmilHvitfeldt/friends).
 
 For this data, we look at the ratings and viewers for the show. Also, later we examine the correlation among the emotions of utterance (line of dialogue) in scenes and also the correlation among which *friends* are in scenes together.
 
@@ -56,7 +63,7 @@ The following plot compares the episode rating to the average rating of the seas
 
 ## Wine Ratings Dataset  
 
-This data comes from Kaggle (https://www.kaggle.com/zynicide/wine-reviews).  
+This data comes from [Kaggle](https://www.kaggle.com/zynicide/wine-reviews).  
 
 For this data, we explore wine ratings and attempt to discover what factors might play role in the wine's rating. We use a text regression to determine the effect of each word in the description of the wine. 
 
@@ -70,7 +77,7 @@ The plot below is a netword plot showing which words often appear together in th
 
 ## Datasaurus Dataset
 
-This data comes from Albert Cairo (http://www.thefunctionalart.com/2016/08/download-datasaurus-never-trust-summary.html).
+This data comes from [Albert Cairo](http://www.thefunctionalart.com/2016/08/download-datasaurus-never-trust-summary.html).
 
 This dataset signifies the importance of plotting data rather than relying on common statistics. For this data, we plot the datasets and visually see the differences in the datasets. Also, we create a heatmap to see where the points are concentrated to impact the statistics.  
 
