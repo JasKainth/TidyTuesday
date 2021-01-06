@@ -22,14 +22,28 @@ R < european_energy/script.R --no-save
 # Datasets  
 
 ## Women of 2020  
+
 This data comes from [BBC](https://www.bbc.com/news/world-55042935).  
 
 For this data, BBC has revealed its list of 100 inspiring and influential women from around the world for 2020. We take a look at which categories do women from different categories excel in. 
 
 ![Women Plot](https://github.com/JasKainth/TidyTuesday/blob/master/women_of_2020/women_plot.jpg)
 
+## Big Mac Index  
+
+This data comes from [The Economist](https://github.com/TheEconomist/big-mac-data).  
+
+For this data, we explore the prices of Big Macs and how their expected price compares the the actual price once we adjust for the GDP. The plot below shows the _Big Mac Index_. The higher the value, the more expensive the Big Mac, once adjusted for GDP.  
+
+![Big Mac Index](https://github.com/JasKainth/TidyTuesday/blob/master/big_mac/big_mac_index.jpg)  
+
+We also see how the price moves of the Big Mac over time. Below we see how the price of the Big Mac changes for countries, while also looking at their GDP.  
+
+![Big Mac Price Change](https://github.com/JasKainth/TidyTuesday/blob/master/big_mac/big_mac_prices.gif)
+
 ## European Energy Dataset  
-The data comes from [Eurostat](https://ec.europa.eu/eurostat/statistics-explained/index.php/Electricity_generation_statistics_%E2%80%93_first_results).
+
+This data comes from [Eurostat](https://ec.europa.eu/eurostat/statistics-explained/index.php/Electricity_generation_statistics_%E2%80%93_first_results).
 
 For this data, we explore the energy supplied and produced by the countries in the European Union. Also, we attempt to examine which countries are trying to be more green and also which types of energy is becoming more/less popular from a period of 2016 to 2018.  
 
@@ -38,7 +52,8 @@ The following map shows energy produced by the countries in Europe over 3 years,
 ![European Energy Map](https://github.com/JasKainth/TidyTuesday/blob/master/european_energy/european_energy_map.jpg)  
 
 ## Canadian Wind Turbine Dataset  
-The data comes from the [Government of Canada](https://open.canada.ca/data/en/dataset/79fdad93-9025-49ad-ba16-c26d718cc070).  
+
+This data comes from the [Government of Canada](https://open.canada.ca/data/en/dataset/79fdad93-9025-49ad-ba16-c26d718cc070).  
 For this data, we explore the wind turbines which are commissioned in Canada. We see which provinces are attempting to create more energy using wind energy.  
 
 The following plot shows a relationship between the energy capacity of all the wind turbines in the project with respect to when the first wind turbine of that project was commissioned, and showing how many turbines are in that project.
