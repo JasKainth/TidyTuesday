@@ -106,7 +106,6 @@ big_mac_per_year %>%
              color = continent)) +
   geom_point() + 
   theme_minimal() + 
-  theme(text = element_text('Avenir Next Condensed')) +
   scale_x_continuous(labels = dollar) + 
   scale_y_continuous(labels = dollar,
                      limits = c(1, 9),
@@ -127,7 +126,6 @@ animation <- big_mac_per_year %>%
              color = continent)) + 
   geom_point() + 
   theme_minimal() + 
-  theme(text = element_text('Avenir Next Condensed')) +
   scale_x_log10(labels = dollar,
                 limits = c(1000, 120000),
                 breaks = c(1000, 10000, 100000)) + 
@@ -168,7 +166,6 @@ big_mac %>%
   geom_line(aes(y = local_price, color = "Price of Big Mac")) + 
   geom_line(aes(y = expected_price, color = "Expected price of Big Mac")) +
   theme_minimal() + 
-  theme(text = element_text('Avenir Next Condensed')) +
   facet_wrap(~ name, scales = "free_y") +
   expand_limits(y = 0) + 
   scale_color_manual(values = c("#FF6F00FF", "#008EA0FF")) + 
@@ -224,8 +221,7 @@ big_mac_area %>%
   labs(title = "Big Mac Index",
        subtitle = " How expensive is the Big Mac relative to it's expected price? \n Higher positive values means that once the Big Mac has been adjusted for the GDP, \n it is more expensive than anticipated.") + 
   theme_void() + 
-  theme(text = element_text('Avenir Next Condensed'),
-        plot.title = element_text(hjust = .5, size = 25, color = "#d70000",
+  theme(plot.title = element_text(hjust = .5, size = 25, color = "#d70000",
                                   face = "bold.italic"),
         plot.subtitle = element_text(hjust = .5, size = 12, color = "#f7ac17",
                                   face = "bold.italic"),
